@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+  
+  body {
+    @apply bg-white text-dark;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium;
+  }
+}
+
+@layer components {
+  /* Card hover effects */
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+
+  .card-hover:hover {
+    @apply transform -translate-y-1 shadow-md;
+  }
+
+  /* Section fade-in animation */
+  .section-fade {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .section-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Contact Form Styles */
+  .form-input {
+    @apply w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-primary text-white placeholder-white/30;
+  }
+
+  .form-label {
+    @apply block text-white/80 mb-2 text-sm font-medium;
+  }
+
+  .form-button {
+    @apply w-full py-3 px-6 rounded-lg transition-all bg-gradient-to-r from-primary to-secondary text-white hover:opacity-90 disabled:opacity-50;
+  }
+
+  /* Contact Method Card */
+  .contact-method-card {
+    @apply backdrop-blur-xl bg-white/10 p-6 rounded-2xl border border-white/10 shadow-xl transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .contact-method-icon {
+    @apply bg-gradient-to-r from-primary to-secondary p-3 rounded-lg text-white;
+  }
+
+  /* Footer Styles */
+  .footer-section {
+    @apply border-t border-white/10 pt-12 pb-8 bg-dark/95 backdrop-blur-xl;
+  }
+
+  .footer-heading {
+    @apply text-white text-sm font-semibold uppercase tracking-wider mb-4;
+  }
+
+  .footer-link {
+    @apply text-white/60 hover:text-white transition-colors;
+  }
+
+  .footer-grid {
+    @apply grid grid-cols-2 md:grid-cols-4 gap-8 mb-12;
+  }
+
+  .footer-logo {
+    @apply h-10 w-10 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center;
+  }
+
+  .footer-description {
+    @apply text-white/60 mb-6 max-w-xs;
+  }
+
+  .footer-bottom {
+    @apply border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center;
+  }
+
+  .footer-copyright {
+    @apply text-white/60 text-sm mb-4 md:mb-0;
+  }
+
+  /* Social Links */
+  .social-links {
+    @apply flex space-x-4;
+  }
+
+  .social-icon {
+    @apply text-white/60 hover:text-white transition-colors h-5 w-5;
+  }
+
+  /* Form Tabs */
+  .form-tabs {
+    @apply flex mb-8 p-1 bg-white/5 rounded-lg;
+  }
+
+  .form-tab {
+    @apply flex-1 py-2 px-4 rounded-md transition-all text-white/70 hover:text-white;
+  }
+
+  .form-tab-active {
+    @apply bg-gradient-to-r from-primary to-secondary text-white;
+  }
+
+  /* Contact Container */
+  .contact-container {
+    @apply backdrop-blur-xl bg-white/10 p-8 rounded-2xl border border-white/10 shadow-xl;
+  }
+
+  /* Hide scrollbar but maintain functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Custom gradient backgrounds */
+  .bg-gradient-primary {
+    @apply bg-gradient-to-r from-primary to-primary/80;
+  }
+
+  .bg-gradient-light {
+    @apply bg-gradient-to-r from-light to-white;
+  }
+
+  /* Responsive padding helpers */
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+}
+
+/* Smooth transitions */
+a, button {
+  @apply transition-all duration-200;
+}
+
+/* Focus styles */
+button:focus, a:focus, input:focus, textarea:focus {
+  @apply outline-none ring-2 ring-primary/30 ring-offset-2;
+}
+
+/* Disable focus ring for mouse users */
+.js-focus-visible :focus:not(.focus-visible) {
+  @apply outline-none ring-0 ring-offset-0;
+}
