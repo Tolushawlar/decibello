@@ -60,7 +60,7 @@ const DataChart: React.FC<DataChartProps> = ({ type, title, labels, datasets }) 
                 font: {
                   family: "'Inter', sans-serif",
                   size: 16,
-                  weight: '500'
+                  weight: 'bold'
                 },
                 padding: {
                   bottom: 20

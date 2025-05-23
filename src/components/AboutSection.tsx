@@ -1,4 +1,3 @@
-import React from 'react';
 import MotionCard from './MotionCard';
 
 const AboutSection = () => {

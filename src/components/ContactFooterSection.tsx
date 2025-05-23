@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useState } from 'react';
 import MotionCard from './MotionCard';
 import ContactForm from './ContactForm';
 import ContactMethodCard from './ContactMethodCard';
