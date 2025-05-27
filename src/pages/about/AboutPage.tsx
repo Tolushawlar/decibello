@@ -1,4 +1,3 @@
-import React from 'react';
 import ContactFooterSection from '../../components/ContactFooterSection';
 
 const AboutPage = () => {

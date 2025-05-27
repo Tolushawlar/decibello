@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /**
  * Utility functions for image optimization
  */
@@ -6,10 +7,10 @@
  * Get responsive image URL with appropriate size based on viewport
  * @param baseUrl Base URL of the image
  * @param width Desired width
- * @param quality Image quality (1-100)
+ * @param _quality Image quality (1-100)
  * @returns Optimized image URL
  */
-export const getResponsiveImageUrl = (baseUrl: string, width: number, quality: number = 80): string => {
+export const getResponsiveImageUrl = (baseUrl: string, width: number, _quality: number = 80): string => {
   // For placeholder images (picsum)
   if (baseUrl.includes('picsum.photos')) {
     return baseUrl.replace(/\/\d+\/\d+/, `/${width}/${Math.round(width * 0.75)}`);
