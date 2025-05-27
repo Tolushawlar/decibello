@@ -1,10 +1,11 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import MotionCard from './MotionCard';
 import ContactForm from './ContactForm';
 import ContactMethodCard from './ContactMethodCard';
 import FooterLinks from './FooterLinks';
 import SocialLinks from './SocialLinks';
+import NewsletterSubscribe from './NewsletterSubscribe';
 
 const ContactFooterSection = () => {
   const [activeTab, setActiveTab] = useState<'contact' | 'schedule'>('contact');
@@ -48,18 +49,23 @@ const ContactFooterSection = () => {
 
   const footerLinks = {
     services: [
-      { name: "Market Analysis", href: "#services" },
-      { name: "Brand Messaging", href: "#services" },
-      { name: "Lead Generation", href: "#services" }
+      { name: "Market Analysis", href: "/#services" },
+      { name: "Brand Messaging", href: "/#services" },
+      { name: "Lead Generation", href: "/#services" }
     ],
     company: [
-      { name: "About", href: "#about" },
-      { name: "Case Studies", href: "#case-studies" },
-      { name: "Insights", href: "#insights" }
+      { name: "About Us", href: "/about" },
+      { name: "Careers", href: "/careers" },
+      { name: "Blog", href: "/blog" }
+    ],
+    resources: [
+      { name: "Case Studies", href: "/#case-studies" },
+      { name: "Insights", href: "/#insights" },
+      { name: "Alumni", href: "/alumni" }
     ],
     legal: [
-      { name: "Privacy Policy", href: "#" },
-      { name: "Terms of Service", href: "#" }
+      { name: "Privacy Policy", href: "/privacy" },
+      { name: "Terms of Service", href: "/terms" }
     ]
   };
 
@@ -70,101 +76,107 @@ const ContactFooterSection = () => {
   };
 
   return (
-    <section id="contact" className="relative bg-dark overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full blur-3xl opacity-20"></div>
-      <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-gradient-to-tr from-secondary/10 to-primary/10 rounded-full blur-3xl opacity-20"></div>
+    <>
+      {/* Newsletter Section */}
+      <NewsletterSubscribe />
+      
+      {/* Contact Section */}
+      <section id="contact" className="relative bg-dark overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full blur-3xl opacity-20"></div>
+        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-gradient-to-tr from-secondary/10 to-primary/10 rounded-full blur-3xl opacity-20"></div>
 
-      {/* Contact Form Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 relative">
-        <div className="text-center mb-16">
-          <span className="inline-block bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent text-base font-semibold tracking-wider mb-3">
-            GET IN TOUCH
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">Contact Us</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-8 rounded-full"></div>
-          <p className="text-white/70 max-w-2xl mx-auto text-lg leading-relaxed">
-            Ready to transform your digital marketing strategy? Reach out to our team of experts today.
-          </p>
-        </div>
-
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* Contact Form */}
-          <div className="lg:col-span-2">
-            <MotionCard delay={0.1}>
-              <div className="contact-container">
-                {/* Form Tabs */}
-                <div className="form-tabs">
-                  <button
-                    onClick={() => setActiveTab('contact')}
-                    className={`form-tab ${activeTab === 'contact' ? 'form-tab-active' : ''}`}
-                  >
-                    Contact Form
-                  </button>
-                  <button
-                    onClick={() => setActiveTab('schedule')}
-                    className={`form-tab ${activeTab === 'schedule' ? 'form-tab-active' : ''}`}
-                  >
-                    Schedule a Call
-                  </button>
-                </div>
-
-                <ContactForm type={activeTab} onSubmit={handleFormSubmit} />
-              </div>
-            </MotionCard>
-          </div>
-
-          {/* Contact Methods */}
-          <div className="space-y-6">
-            {contactMethods.map((method, index) => (
-              <ContactMethodCard
-                key={method.title}
-                {...method}
-                delay={0.1 * (index + 1)}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Footer */}
-      <footer className="footer-section">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="footer-grid">
-            {/* Logo and Description */}
-            <div className="col-span-2 md:col-span-1">
-              <div className="flex items-center mb-4">
-                <div className="footer-logo">
-                  <span className="text-white font-bold text-xl">D</span>
-                </div>
-                <span className="text-white font-bold text-xl ml-3">Decibello</span>
-              </div>
-              <p className="footer-description">
-                Transforming data into strategy for measurable business growth and lasting impact.
-              </p>
-              <SocialLinks />
-            </div>
-
-            {/* Footer Links */}
-            <FooterLinks title="Services" links={footerLinks.services} />
-            <FooterLinks title="Company" links={footerLinks.company} />
-            <FooterLinks title="Legal" links={footerLinks.legal} />
-          </div>
-
-          {/* Copyright */}
-          <div className="footer-bottom">
-            <p className="footer-copyright">
-              © 2025 Decibello Limited. All rights reserved.
+        {/* Contact Form Section */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 relative">
+          <div className="text-center mb-16">
+            <span className="inline-block bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent text-base font-semibold tracking-wider mb-3">
+              GET IN TOUCH
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">Contact Us</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-8 rounded-full"></div>
+            <p className="text-white/70 max-w-2xl mx-auto text-lg leading-relaxed">
+              Ready to transform your digital marketing strategy? Reach out to our team of experts today.
             </p>
-            <div className="flex space-x-6">
-              <a href="#" className="footer-link text-sm">Privacy Policy</a>
-              <a href="#" className="footer-link text-sm">Terms of Service</a>
-              <a href="#" className="footer-link text-sm">Sitemap</a>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Contact Form */}
+            <div className="lg:col-span-2">
+              <MotionCard delay={0.1}>
+                <div className="contact-container">
+                  {/* Form Tabs */}
+                  <div className="form-tabs">
+                    <button
+                      onClick={() => setActiveTab('contact')}
+                      className={`form-tab ${activeTab === 'contact' ? 'form-tab-active' : ''}`}
+                    >
+                      Contact Form
+                    </button>
+                    <button
+                      onClick={() => setActiveTab('schedule')}
+                      className={`form-tab ${activeTab === 'schedule' ? 'form-tab-active' : ''}`}
+                    >
+                      Schedule a Call
+                    </button>
+                  </div>
+
+                  <ContactForm type={activeTab} onSubmit={handleFormSubmit} />
+                </div>
+              </MotionCard>
+            </div>
+
+            {/* Contact Methods */}
+            <div className="space-y-6">
+              {contactMethods.map((method, index) => (
+                <ContactMethodCard
+                  key={method.title}
+                  {...method}
+                  delay={0.1 * (index + 1)}
+                />
+              ))}
             </div>
           </div>
         </div>
-      </footer>
-    </section>
+
+        {/* Footer */}
+        <footer className="footer-section">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="footer-grid">
+              {/* Logo and Description */}
+              <div className="col-span-2 md:col-span-1">
+                <Link to="/" className="flex items-center mb-4">
+                  <div className="footer-logo">
+                    <span className="text-white font-bold text-xl">D</span>
+                  </div>
+                  <span className="text-white font-bold text-xl ml-3">Decibello</span>
+                </Link>
+                <p className="footer-description">
+                  Transforming data into strategy for measurable business growth and lasting impact.
+                </p>
+                <SocialLinks />
+              </div>
+
+              {/* Footer Links */}
+              <FooterLinks title="Services" links={footerLinks.services} />
+              <FooterLinks title="Company" links={footerLinks.company} />
+              <FooterLinks title="Resources" links={footerLinks.resources} />
+            </div>
+
+            {/* Copyright */}
+            <div className="footer-bottom">
+              <p className="footer-copyright">
+                © 2025 Decibello Limited. All rights reserved.
+              </p>
+              <div className="flex space-x-6">
+                <Link to="/privacy" className="footer-link text-sm">Privacy Policy</Link>
+                <Link to="/terms" className="footer-link text-sm">Terms of Service</Link>
+                <Link to="/sitemap" className="footer-link text-sm">Sitemap</Link>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </section>
+    </>
   );
 };
 

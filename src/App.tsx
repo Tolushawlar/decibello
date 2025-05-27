@@ -1,44 +1,25 @@
-import { useEffect } from 'react'
-import Navbar from './components/Navbar'
-import MinimalHero from './components/MinimalHero'
-import ServicesSection from './components/ServicesSection'
-import ApproachSection from './components/ApproachSection'
-import CaseStudySection from './components/CaseStudySection'
-import InsightsSection from './components/InsightsSection'
-import ContactFooterSection from './components/ContactFooterSection'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/about/AboutPage';
+import CareersPage from './pages/careers/CareersPage';
+import BlogPage from './pages/blog/BlogPage';
 
 function App() {
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.section-fade').forEach(section => {
-      observer.observe(section);
-    });
-
-    return () => {
-      document.querySelectorAll('.section-fade').forEach(section => {
-        observer.unobserve(section);
-      });
-    };
-  }, []);
-
   return (
-    <>
+    <Router>
       <Navbar />
-      <MinimalHero />
-      <ApproachSection />
-      <ServicesSection />
-      <CaseStudySection />
-      <InsightsSection />
-      <ContactFooterSection />
-    </>
-  )
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/careers" element={<CareersPage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        {/* Add more routes as needed */}
+        <Route path="*" element={<HomePage />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
