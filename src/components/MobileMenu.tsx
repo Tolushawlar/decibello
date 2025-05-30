@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Logo from './Logo';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -21,7 +22,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, navItems }) =>
       <div className="h-full flex flex-col overflow-y-auto">
         <div className="flex items-center justify-between p-6 border-b border-white/10">
           <Link to="/" className="flex items-center" onClick={onClose}>
-            <span className="text-white font-bold text-2xl">Decibello</span>
+            <Logo variant="white" />
           </Link>
           <button 
             onClick={onClose}

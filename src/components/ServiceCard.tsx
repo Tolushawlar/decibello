@@ -1,47 +1,100 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ServiceModal from './ServiceModal';
 
 interface ServiceCardProps {
   title: string;
   description: string;
   icon: React.ReactNode;
-  gradient: string;
-  onClick?: () => void;
+  color: 'primary' | 'secondary';
+  iconSvg?: string;
+  details?: {
+    title: string;
+    description: string;
+    icon?: React.ReactNode;
+  }[];
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({
-  title,
-  description,
-  icon,
-  gradient,
-  onClick
+const ServiceCard: React.FC<ServiceCardProps> = ({ 
+  title, 
+  description, 
+  icon, 
+  color,
+  iconSvg,
+  details = []
 }) => {
-  return (
-    <div 
-      className="group backdrop-blur-xl bg-white/30 p-8 rounded-2xl border border-white/20 shadow-xl h-full transition-all duration-300 hover:-translate-y-1 cursor-pointer"
-      onClick={onClick}
-    >
-      {/* Icon */}
-      <div className={`bg-gradient-to-br ${gradient} p-4 rounded-xl w-16 h-16 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-        {icon}
-      </div>
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-      {/* Content */}
-      <h3 className="text-xl font-semibold text-dark mb-4">{title}</h3>
-      <p className="text-dark/70 mb-6">{description}</p>
-
-      {/* Learn More Link */}
-      <div className="inline-flex items-center text-primary hover:text-secondary transition-colors group/link">
-        <span className="mr-2">Learn More</span>
-        <svg 
-          className="w-4 h-4 transform transition-transform group-hover/link:translate-x-1" 
-          fill="none" 
-          stroke="currentColor" 
-          viewBox="0 0 24 24"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+  // Default details if none provided
+  const serviceDetails = details.length > 0 ? details : [
+    {
+      title: 'Our Approach',
+      description: 'We use data-driven methodologies and industry best practices to deliver exceptional results.',
+      icon: icon
+    },
+    {
+      title: 'Key Benefits',
+      description: 'Get measurable results and clear insights that help your business grow sustainably.',
+      icon: (
+        <svg className={`h-6 w-6 text-${color}`} fill="currentColor" viewBox="0 0 20 20">
+          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
         </svg>
+      )
+    },
+    {
+      title: 'Process Overview',
+      description: 'Our systematic approach ensures consistent quality and reliable outcomes for every project.',
+      icon: (
+        <svg className={`h-6 w-6 text-${color}`} fill="currentColor" viewBox="0 0 20 20">
+          <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+          <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd"></path>
+        </svg>
+      )
+    }
+  ];
+
+  return (
+    <>
+      <div className={`bg-white rounded-lg shadow-lg transform transition-all duration-300 hover:-translate-y-2 border-b-4 border-${color}`}>
+        <div className={`h-3 bg-${color} w-full rounded-t-lg`}></div>
+        <div className="p-6 md:p-8">
+          <div className={`w-16 h-16 bg-${color}/10 rounded-full flex items-center justify-center mb-6 mx-auto`}>
+            {iconSvg ? (
+              <img src={iconSvg} alt={title} className={`h-8 w-8 text-${color}`} />
+            ) : (
+              icon
+            )}
+          </div>
+          <h3 className="text-h3 text-dark mb-4 text-center">{title}</h3>
+          <p className="text-body text-dark text-center mb-6">
+            {description}
+          </p>
+          <div className="text-center">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className={`inline-flex items-center text-${color} hover:text-${color === 'primary' ? 'secondary' : 'primary'} transition-colors group`}
+            >
+              <span className="mr-2">Learn More</span>
+              <svg 
+                className="w-4 h-4 transform transition-transform group-hover:translate-x-1" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
+
+      <ServiceModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title={title}
+        description={description}
+        details={serviceDetails}
+      />
+    </>
   );
 };
 

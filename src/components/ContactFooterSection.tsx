@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import MotionCard from './MotionCard';
 import ContactForm from './ContactForm';
@@ -7,6 +6,7 @@ import ContactMethodCard from './ContactMethodCard';
 import FooterLinks from './FooterLinks';
 import SocialLinks from './SocialLinks';
 import NewsletterSubscribe from './NewsletterSubscribe';
+import Logo from './Logo';
 
 const ContactFooterSection = () => {
   const [activeTab, setActiveTab] = useState<'contact' | 'schedule'>('contact');
@@ -146,10 +146,7 @@ const ContactFooterSection = () => {
               {/* Logo and Description */}
               <div className="col-span-2 md:col-span-1">
                 <Link to="/" className="flex items-center mb-4">
-                  <div className="footer-logo">
-                    <span className="text-white font-bold text-xl">D</span>
-                  </div>
-                  <span className="text-white font-bold text-xl ml-3">Decibello</span>
+                  <Logo variant="white" size="lg" />
                 </Link>
                 <p className="footer-description">
                   Transforming data into strategy for measurable business growth and lasting impact.

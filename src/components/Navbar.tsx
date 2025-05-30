@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import MobileMenu from './MobileMenu';
+import Logo from './Logo';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -101,9 +102,7 @@ const Navbar = () => {
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center">
-              <span className={`font-bold text-2xl ${
-                isScrolled ? 'text-primary' : 'text-white'
-              }`}>Decibello</span>
+              <Logo variant={isScrolled ? 'default' : 'white'} />
             </Link>
             
             {/* Desktop menu */}
@@ -115,7 +114,7 @@ const Navbar = () => {
                       <button
                         onClick={(e) => handleDropdownToggle(item.name, e)}
                         className={`flex items-center text-body font-medium hover:text-secondary transition-colors ${
-                          isScrolled ? 'text-dark' : 'text-white'
+                          isScrolled ? 'text-blue' : 'text-dark'
                         }`}
                         aria-expanded={activeDropdown === item.name}
                       >
@@ -152,7 +151,7 @@ const Navbar = () => {
                     <Link
                       to={item.path}
                       className={`text-body font-medium hover:text-secondary transition-colors ${
-                        isScrolled ? 'text-dark' : 'text-white'
+                        isScrolled ? 'text-blue' : 'text-dark'
                       }`}
                     >
                       {item.name}
@@ -175,7 +174,7 @@ const Navbar = () => {
               <button 
                 onClick={() => setIsMobileMenuOpen(true)}
                 className={`p-2 rounded-md focus:outline-none ${
-                  isScrolled ? 'text-primary' : 'text-white'
+                  isScrolled ? 'text-blue' : 'text-dark'
                 }`}
                 aria-label="Open menu"
               >

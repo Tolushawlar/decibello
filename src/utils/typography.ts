@@ -34,6 +34,7 @@ export const formatDate = (dateString: string, locale: string = 'en-US'): string
       month: 'long',
       day: 'numeric'
     }).format(date);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     return dateString;
   }
