@@ -1,4 +1,3 @@
-import React from 'react';
 import MotionCard from './MotionCard';
 import ServiceCard from './ServiceCard';
 import marketAnalysisIcon from '../assets/icon-market-analysis.svg';
