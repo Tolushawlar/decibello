@@ -68,22 +68,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           <p className="text-body text-dark text-center mb-6">
             {description}
           </p>
-          <div className="text-center">
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className={`inline-flex items-center text-${color} hover:text-${color === 'primary' ? 'secondary' : 'primary'} transition-colors group`}
-            >
-              <span className="mr-2">Learn More</span>
-              <svg 
-                className="w-4 h-4 transform transition-transform group-hover:translate-x-1" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
-            </button>
-          </div>
+          {/* Read More button disabled */}
         </div>
       </div>
 

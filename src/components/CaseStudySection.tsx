@@ -74,7 +74,7 @@ const CaseStudySection = () => {
           <span className="inline-block bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent text-base font-semibold tracking-wider mb-3">
             SUCCESS STORIES
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-dark mb-6 leading-tight">Case Studies</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-dark mb-6 leading-tight">Our Insights</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-8 rounded-full"></div>
           <p className="text-dark/70 max-w-2xl mx-auto text-lg leading-relaxed">
             Explore how we've helped businesses achieve remarkable results through data-driven strategies and innovative solutions.
