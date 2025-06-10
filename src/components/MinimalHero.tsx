@@ -1,7 +1,17 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
-const MinimalHero: React.FC = () => {
+interface MinimalHeroProps {
+  title?: string;
+  subtitle?: string;
+  imageSrc?: string;
+}
+
+const MinimalHero: React.FC<MinimalHeroProps> = ({ 
+  title = "Transform Data into Strategic Growth", 
+  subtitle = "We help businesses leverage data-driven insights to create impactful marketing strategies that drive measurable growth.",
+  imageSrc = "https://picsum.photos/800/600"
+}) => {
   const heroRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
@@ -46,10 +56,14 @@ const MinimalHero: React.FC = () => {
               Data-Driven Strategy
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark leading-tight mb-6">
-              Transform Data into <span className="text-primary">Strategic Growth</span>
+              {title.includes("Transform") ? (
+                <>Transform Data into <span className="text-primary">Strategic Growth</span></>
+              ) : (
+                title
+              )}
             </h1>
             <p className="text-lg text-dark/70 mb-8 max-w-lg">
-              We help businesses leverage data-driven insights to create impactful marketing strategies that drive measurable growth.
+              {subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button className="bg-primary text-white px-8 py-3 rounded-md hover:bg-primary/90 transition-colors">
@@ -69,8 +83,8 @@ const MinimalHero: React.FC = () => {
               
               <div className="relative bg-white rounded-xl shadow-xl overflow-hidden">
                 <img 
-                  src="https://picsum.photos/800/600"
-                  alt="Random placeholder image"
+                  src={imageSrc}
+                  alt="Hero image"
                   className="w-full h-full object-cover"
                 />
               </div>
