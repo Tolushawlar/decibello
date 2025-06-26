@@ -1,20 +1,29 @@
 import ContactFooterSection from '../../components/ContactFooterSection';
 import ImageWithOverlay from '../../components/ImageWithOverlay';
 
-const DataAnalyticsPage: React.FC = () => {
+const MarketResearchPage: React.FC = () => {
   const services = [
     {
-      title: 'Data Strategy & Governance',
-      description: 'Develop comprehensive data strategies aligned with business objectives while ensuring quality, security, and compliance.',
+      title: 'Consumer Insights',
+      description: 'Understand your target audience through comprehensive research that reveals behaviors, preferences, and motivations.',
       icon: (
         <svg className="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-          <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" clipRule="evenodd"></path>
+          <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path>
         </svg>
       )
     },
     {
-      title: 'Advanced Analytics & AI',
-      description: 'Apply machine learning, predictive modeling, and AI to extract deeper insights and enable data-driven decision making.',
+      title: 'Competitive Analysis',
+      description: 'Gain strategic advantages by analyzing competitor strategies, market positioning, and performance benchmarks.',
+      icon: (
+        <svg className="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+          <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+        </svg>
+      )
+    },
+    {
+      title: 'Market Sizing & Opportunity',
+      description: 'Quantify market opportunities and identify growth potential through comprehensive market analysis and forecasting.',
       icon: (
         <svg className="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 20 20">
           <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
@@ -23,30 +32,21 @@ const DataAnalyticsPage: React.FC = () => {
       )
     },
     {
-      title: 'Business Intelligence',
-      description: 'Create intuitive dashboards and reports that transform complex data into actionable insights for stakeholders.',
+      title: 'Trend Analysis',
+      description: 'Stay ahead of market shifts with comprehensive trend analysis that informs strategic planning and innovation.',
       icon: (
         <svg className="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-          <path fillRule="evenodd" d="M5 3a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H5zm0 2h10v7h-2l-1 2H8l-1-2H5V5z" clipRule="evenodd"></path>
-        </svg>
-      )
-    },
-    {
-      title: 'Data Engineering',
-      description: 'Build robust data pipelines and infrastructure to collect, process, and store data efficiently at scale.',
-      icon: (
-        <svg className="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-          <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd"></path>
+          <path fillRule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clipRule="evenodd"></path>
         </svg>
       )
     }
   ];
 
   const stats = [
-    { value: '85%', label: 'improvement in decision-making speed' },
-    { value: '3.2x', label: 'increase in data-driven insights' },
-    { value: '67%', label: 'reduction in manual reporting time' },
-    { value: '92%', label: 'accuracy in predictive models' }
+    { value: '94%', label: 'accuracy in market predictions' },
+    { value: '3.5x', label: 'faster time to market insights' },
+    { value: '78%', label: 'improvement in strategic decisions' },
+    { value: '65%', label: 'reduction in market entry risks' }
   ];
 
   return (
@@ -56,15 +56,15 @@ const DataAnalyticsPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-dark mb-6">Data Analytics</h1>
+              <h1 className="text-4xl md:text-5xl font-bold text-dark mb-6">Market Research</h1>
               <p className="text-xl text-dark/70 mb-8">
-                Transform raw data into actionable insights that drive strategic decisions, optimize operations, and create competitive advantages for your business.
+                Make informed strategic decisions with comprehensive market research that uncovers opportunities, validates assumptions, and reduces business risks.
               </p>
               <a 
                 href="#contact"
                 className="inline-flex items-center bg-primary text-white px-6 py-3 rounded-md hover:bg-primary/90 transition-colors"
               >
-                <span>Start Your Analytics Journey</span>
+                <span>Discover Market Insights</span>
                 <svg 
                   className="ml-2 w-4 h-4" 
                   fill="none" 
@@ -77,8 +77,8 @@ const DataAnalyticsPage: React.FC = () => {
             </div>
             <div>
               <ImageWithOverlay
-                src="https://picsum.photos/800/600?random=98"
-                alt="Data Analytics"
+                src="https://picsum.photos/800/600?random=101"
+                alt="Market Research"
                 className="rounded-lg shadow-lg"
                 aspectRatio="75%"
               />
@@ -112,7 +112,7 @@ const DataAnalyticsPage: React.FC = () => {
             <span className="inline-block bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent text-base font-semibold tracking-wider mb-3">
               OUR SERVICES
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-dark mb-6">Data Analytics Solutions</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-dark mb-6">Market Research Solutions</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-8 rounded-full"></div>
           </div>
 
@@ -133,15 +133,15 @@ const DataAnalyticsPage: React.FC = () => {
       {/* CTA Section */}
       <section className="py-16 bg-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Unlock Your Data's Potential?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Understand Your Market?</h2>
           <p className="text-white/80 mb-8 max-w-2xl mx-auto">
-            Partner with Decibello to transform your data into strategic insights that drive growth and competitive advantage.
+            Partner with Decibello to conduct comprehensive market research that informs strategy and drives competitive advantage.
           </p>
           <a 
             href="#contact"
             className="bg-white text-primary px-8 py-3 rounded-md hover:bg-light transition-colors font-medium inline-block"
           >
-            Get Started Today
+            Start Your Research
           </a>
         </div>
       </section>
@@ -151,4 +151,4 @@ const DataAnalyticsPage: React.FC = () => {
   );
 };
 
-export default DataAnalyticsPage;
+export default MarketResearchPage;

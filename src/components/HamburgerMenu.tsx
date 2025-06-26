@@ -35,14 +35,14 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ isOpen, onClose, navItems
       
       {/* Menu panel */}
       <div 
-        className={`fixed top-0 left-0 h-3/5 w-full z-50 bg-white transform transition-transform duration-300 shadow-xl ${
+        className={`fixed top-0 left-0 h-4/5 w-full z-50 bg-white transform transition-transform duration-300 shadow-xl ${
           isOpen ? 'translate-y-0' : '-translate-y-full'
         }`}
         aria-hidden={!isOpen}
       >
       <div className="h-full flex flex-col max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between p-1 border-b-2 border-secondary bg-light/30 mx-6 my-2 rounded-lg">
-          <Logo variant="default" size="sm" />
+          <Logo variant="default" size="md" />
           <button 
             onClick={onClose}
             className="p-1 text-primary hover:text-secondary transition-colors"

@@ -1,52 +1,51 @@
 import ContactFooterSection from '../../components/ContactFooterSection';
 import ImageWithOverlay from '../../components/ImageWithOverlay';
 
-const DataAnalyticsPage: React.FC = () => {
+const BrandStrategyPage: React.FC = () => {
   const services = [
     {
-      title: 'Data Strategy & Governance',
-      description: 'Develop comprehensive data strategies aligned with business objectives while ensuring quality, security, and compliance.',
+      title: 'Brand Positioning',
+      description: 'Define your unique market position and value proposition that differentiates you from competitors and resonates with your target audience.',
       icon: (
         <svg className="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-          <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" clipRule="evenodd"></path>
+          <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd"></path>
         </svg>
       )
     },
     {
-      title: 'Advanced Analytics & AI',
-      description: 'Apply machine learning, predictive modeling, and AI to extract deeper insights and enable data-driven decision making.',
+      title: 'Brand Identity Development',
+      description: 'Create cohesive visual and verbal brand identities that communicate your values and connect emotionally with customers.',
       icon: (
         <svg className="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
-          <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+          <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd"></path>
         </svg>
       )
     },
     {
-      title: 'Business Intelligence',
-      description: 'Create intuitive dashboards and reports that transform complex data into actionable insights for stakeholders.',
+      title: 'Brand Messaging',
+      description: 'Develop compelling brand narratives and messaging frameworks that consistently communicate your story across all touchpoints.',
       icon: (
         <svg className="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-          <path fillRule="evenodd" d="M5 3a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H5zm0 2h10v7h-2l-1 2H8l-1-2H5V5z" clipRule="evenodd"></path>
+          <path fillRule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clipRule="evenodd"></path>
         </svg>
       )
     },
     {
-      title: 'Data Engineering',
-      description: 'Build robust data pipelines and infrastructure to collect, process, and store data efficiently at scale.',
+      title: 'Brand Experience Design',
+      description: 'Design seamless brand experiences across all customer touchpoints that build loyalty and drive business growth.',
       icon: (
         <svg className="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-          <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd"></path>
+          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
         </svg>
       )
     }
   ];
 
   const stats = [
-    { value: '85%', label: 'improvement in decision-making speed' },
-    { value: '3.2x', label: 'increase in data-driven insights' },
-    { value: '67%', label: 'reduction in manual reporting time' },
-    { value: '92%', label: 'accuracy in predictive models' }
+    { value: '73%', label: 'increase in brand recognition' },
+    { value: '2.8x', label: 'improvement in customer loyalty' },
+    { value: '45%', label: 'boost in premium pricing power' },
+    { value: '91%', label: 'consistency across brand touchpoints' }
   ];
 
   return (
@@ -56,15 +55,15 @@ const DataAnalyticsPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-dark mb-6">Data Analytics</h1>
+              <h1 className="text-4xl md:text-5xl font-bold text-dark mb-6">Brand Strategy</h1>
               <p className="text-xl text-dark/70 mb-8">
-                Transform raw data into actionable insights that drive strategic decisions, optimize operations, and create competitive advantages for your business.
+                Build powerful brands that resonate with your audience, differentiate from competitors, and drive sustainable business growth through strategic positioning and compelling storytelling.
               </p>
               <a 
                 href="#contact"
                 className="inline-flex items-center bg-primary text-white px-6 py-3 rounded-md hover:bg-primary/90 transition-colors"
               >
-                <span>Start Your Analytics Journey</span>
+                <span>Build Your Brand</span>
                 <svg 
                   className="ml-2 w-4 h-4" 
                   fill="none" 
@@ -77,8 +76,8 @@ const DataAnalyticsPage: React.FC = () => {
             </div>
             <div>
               <ImageWithOverlay
-                src="https://picsum.photos/800/600?random=98"
-                alt="Data Analytics"
+                src="https://picsum.photos/800/600?random=100"
+                alt="Brand Strategy"
                 className="rounded-lg shadow-lg"
                 aspectRatio="75%"
               />
@@ -112,7 +111,7 @@ const DataAnalyticsPage: React.FC = () => {
             <span className="inline-block bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent text-base font-semibold tracking-wider mb-3">
               OUR SERVICES
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-dark mb-6">Data Analytics Solutions</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-dark mb-6">Brand Strategy Solutions</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-8 rounded-full"></div>
           </div>
 
@@ -133,15 +132,15 @@ const DataAnalyticsPage: React.FC = () => {
       {/* CTA Section */}
       <section className="py-16 bg-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Unlock Your Data's Potential?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Transform Your Brand?</h2>
           <p className="text-white/80 mb-8 max-w-2xl mx-auto">
-            Partner with Decibello to transform your data into strategic insights that drive growth and competitive advantage.
+            Partner with Decibello to develop a brand strategy that differentiates your business and drives meaningful connections with your audience.
           </p>
           <a 
             href="#contact"
             className="bg-white text-primary px-8 py-3 rounded-md hover:bg-light transition-colors font-medium inline-block"
           >
-            Get Started Today
+            Start Your Brand Journey
           </a>
         </div>
       </section>
@@ -151,4 +150,4 @@ const DataAnalyticsPage: React.FC = () => {
   );
 };
 
-export default DataAnalyticsPage;
+export default BrandStrategyPage;

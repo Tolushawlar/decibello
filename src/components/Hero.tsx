@@ -49,7 +49,7 @@ const Hero = () => {
       
       {/* Content Container */}
       <div className="relative z-10 h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col">
-        <div className="flex flex-col justify-between h-full pt-32 pb-16 md:pt-36 md:pb-20">
+        <div className="flex flex-col justify-between h-full pt-20 pb-16 md:pt-24 md:pb-20">
           {/* Logo area */}
           <div ref={headerRef} className="flex justify-between items-center">
           </div>
@@ -73,7 +73,7 @@ const Hero = () => {
               </p>
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                 <Link 
-                  to="/capabilities" 
+                  to="/user-registration/register" 
                   className="bg-secondary text-dark px-8 py-4 rounded hover:bg-opacity-90 text-lg font-semibold inline-block text-center"
                 >
                   Get Started

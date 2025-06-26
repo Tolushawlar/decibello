@@ -57,7 +57,7 @@ const HealthcarePage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <Link 
+              {/* <Link 
                 to="/industries"
                 className="inline-flex items-center text-primary hover:text-secondary transition-colors mb-6"
               >
@@ -70,13 +70,13 @@ const HealthcarePage = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                 </svg>
                 All Industries
-              </Link>
+              </Link> */}
               <h1 className="text-4xl md:text-5xl font-bold text-dark mb-6">Healthcare</h1>
               <p className="text-xl text-dark/70 mb-8">
                 Strategic digital marketing solutions for healthcare providers, pharmaceutical companies, and medical technology firms that drive patient engagement while maintaining compliance.
               </p>
-              <Link 
-                to="/contact"
+              <a 
+                href="#contact"
                 className="inline-flex items-center bg-primary text-white px-6 py-3 rounded-md hover:bg-primary/90 transition-colors"
               >
                 <span>Discuss Your Project</span>
@@ -88,7 +88,7 @@ const HealthcarePage = () => {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                 </svg>
-              </Link>
+              </a>
             </div>
             <div>
               <ImageWithOverlay
@@ -258,7 +258,7 @@ const HealthcarePage = () => {
                   <p className="ml-3 text-dark/70">28% reduction in cost per acquisition</p>
                 </li>
               </ul>
-              <Link 
+              {/* <Link 
                 to="#"
                 className="inline-flex items-center text-primary hover:text-secondary transition-colors group"
               >
@@ -271,7 +271,7 @@ const HealthcarePage = () => {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                 </svg>
-              </Link>
+              </Link> */}
             </div>
             <div>
               <ImageWithOverlay

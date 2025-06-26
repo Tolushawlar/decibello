@@ -110,9 +110,9 @@ const InsightsSection = () => {
                         </div>
                       </div>
 
-                      <div className="flex items-center justify-between mt-6 pt-6 border-t border-dark/10">
-                        <span className="text-dark/50 text-sm">{insight.readTime}</span>
-                        <a 
+                      {/* <div className="flex items-center justify-between mt-6 pt-6 border-t border-dark/10"> */}
+                        {/* <span className="text-dark/50 text-sm">{insight.readTime}</span> */}
+                        {/* <a 
                           href="#" 
                           className="inline-flex items-center text-primary hover:text-secondary transition-colors group"
                         >
@@ -125,8 +125,8 @@ const InsightsSection = () => {
                           >
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                           </svg>
-                        </a>
-                      </div>
+                        </a> */}
+                      {/* </div> */}
                     </div>
                   </div>
                 </div>

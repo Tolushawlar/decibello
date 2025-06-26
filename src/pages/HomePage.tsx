@@ -4,7 +4,6 @@ import ApproachSection from '../components/ApproachSection';
 import CaseStudySection from '../components/CaseStudySection';
 import InsightsSection from '../components/InsightsSection';
 import ContactFooterSection from '../components/ContactFooterSection';
-import NewsletterSubscribe from '../components/NewsletterSubscribe';
 
 const HomePage = () => {
   return (
@@ -14,7 +13,6 @@ const HomePage = () => {
       <ApproachSection />
       <CaseStudySection />
       <InsightsSection />
-      <NewsletterSubscribe />
       <ContactFooterSection />
     </>
   );

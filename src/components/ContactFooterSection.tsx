@@ -50,24 +50,27 @@ const ContactFooterSection = () => {
   ];
 
   const footerLinks = {
-    services: [
-      { name: "Market Analysis", href: "/#services" },
-      { name: "Brand Messaging", href: "/#services" },
-      { name: "Lead Generation", href: "/#services" }
+    industries: [
+      { name: "Financial Services", href: "/industries/financial-services" },
+      { name: "Healthcare", href: "/industries/healthcare" },
+      { name: "Retail", href: "/industries/retail" },
+      { name: "Manufacturing", href: "/industries/manufacturing" }
+    ],
+    capabilities: [
+      { name: "Digital Transformation", href: "/capabilities/digital-transformation" },
+      { name: "Cloud Services", href: "/capabilities/cloud-services" },
+      { name: "Data Analytics", href: "/capabilities/data-analytics" }
     ],
     company: [
       { name: "About Us", href: "/about" },
-      { name: "Careers", href: "/careers" },
-      { name: "Blog", href: "/blog" }
+      { name: "Leadership", href: "/about/leadership" },
+      { name: "Contact", href: "/about/contact" },
+      { name: "Careers", href: "/careers" }
     ],
-    resources: [
-      { name: "Case Studies", href: "/#case-studies" },
-      { name: "Insights", href: "/#insights" },
-      { name: "Alumni", href: "/alumni" }
-    ],
-    legal: [
-      { name: "Privacy Policy", href: "/privacy" },
-      { name: "Terms of Service", href: "/terms" }
+    insights: [
+      { name: "Blog", href: "/blog" },
+      { name: "Insights", href: "/insights" },
+      { name: "Case Studies", href: "/insights/case-studies" }
     ]
   };
 
@@ -149,16 +152,16 @@ const ContactFooterSection = () => {
                 <Link to="/" className="flex items-center mb-4">
                   <Logo variant="white" size="lg" />
                 </Link>
-                <p className="footer-description">
+                {/* <p className="footer-description">
                   Transforming data into strategy for measurable business growth and lasting impact.
-                </p>
-                <SocialLinks />
+                </p> */}
               </div>
 
               {/* Footer Links */}
-              <FooterLinks title="Services" links={footerLinks.services} />
+              <FooterLinks title="Industries" links={footerLinks.industries} />
+              <FooterLinks title="Capabilities" links={footerLinks.capabilities} />
               <FooterLinks title="Company" links={footerLinks.company} />
-              <FooterLinks title="Resources" links={footerLinks.resources} />
+              {/* <FooterLinks title="Insights" links={footerLinks.insights} /> */}
             </div>
 
             {/* Copyright */}
@@ -167,9 +170,8 @@ const ContactFooterSection = () => {
                 © 2025 Decibello Limited. All rights reserved.
               </p>
               <div className="flex space-x-6">
-                <Link to="/privacy" className="footer-link text-sm">Privacy Policy</Link>
-                <Link to="/terms" className="footer-link text-sm">Terms of Service</Link>
-                <Link to="/sitemap" className="footer-link text-sm">Sitemap</Link>
+                {/* <Link to="/user-registration/register" className="footer-link text-sm">Sign In | Subscribe</Link> */}
+                <SocialLinks />
               </div>
             </div>
           </div>

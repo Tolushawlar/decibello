@@ -29,7 +29,6 @@ const SubHeader: React.FC<SubHeaderProps> = ({ links }) => {
     '/industries': [
       { name: 'Financial Services', path: '/industries/financial-services' },
       { name: 'Healthcare', path: '/industries/healthcare' },
-      { name: 'Technology', path: '/industries/technology' },
       { name: 'Retail', path: '/industries/retail' }
     ],
     '/blog': [

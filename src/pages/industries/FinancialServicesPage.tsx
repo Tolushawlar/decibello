@@ -63,7 +63,7 @@ const FinancialServicesPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <Link 
+              {/* <Link 
                 to="/industries"
                 className="inline-flex items-center text-primary hover:text-secondary transition-colors mb-6"
               >
@@ -76,13 +76,13 @@ const FinancialServicesPage = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                 </svg>
                 All Industries
-              </Link>
+              </Link> */}
               <h1 className="text-4xl md:text-5xl font-bold text-dark mb-6">Financial Services</h1>
               <p className="text-xl text-dark/70 mb-8">
                 Data-driven marketing strategies for banks, fintech startups, investment firms, and insurance companies to enhance customer acquisition, engagement, and retention.
               </p>
-              <Link 
-                to="/contact"
+              <a 
+                href="#contact"
                 className="inline-flex items-center bg-primary text-white px-6 py-3 rounded-md hover:bg-primary/90 transition-colors"
               >
                 <span>Discuss Your Project</span>
@@ -94,7 +94,7 @@ const FinancialServicesPage = () => {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                 </svg>
-              </Link>
+              </a>
             </div>
             <div>
               <ImageWithOverlay
@@ -215,7 +215,7 @@ const FinancialServicesPage = () => {
                   </div>
                   <div className="p-6">
                     <p className="text-dark/70 mb-6">{study.description}</p>
-                    <Link 
+                    {/* <Link 
                       to="#"
                       className="inline-flex items-center text-primary hover:text-secondary transition-colors group/link"
                     >
@@ -228,7 +228,7 @@ const FinancialServicesPage = () => {
                       >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                       </svg>
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               </div>
@@ -244,12 +244,12 @@ const FinancialServicesPage = () => {
           <p className="text-white/80 mb-8 max-w-2xl mx-auto">
             Partner with Decibello to develop data-driven marketing strategies that drive growth while navigating the complexities of the financial industry.
           </p>
-          <Link 
-            to="/contact"
+          <a 
+            href="#contact"
             className="bg-white text-primary px-8 py-3 rounded-md hover:bg-light transition-colors font-medium inline-block"
           >
             Contact Us Today
-          </Link>
+          </a>
         </div>
       </section>
 

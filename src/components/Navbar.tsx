@@ -22,7 +22,6 @@ const Navbar = () => {
       dropdownItems: [
         { name: 'Financial Services', path: '/industries/financial-services' },
         { name: 'Healthcare', path: '/industries/healthcare' },
-        { name: 'Technology', path: '/industries/technology' },
         { name: 'Retail', path: '/industries/retail' }
       ]
     },
@@ -61,7 +60,12 @@ const Navbar = () => {
     {
       name: 'About Us',
       path: '/about',
-      dropdown: false
+      dropdown: true,
+      dropdownItems: [
+        { name: 'About Us', path: '/about' },
+        { name: 'Leadership', path: '/about/leadership' },
+        { name: 'Contact', path: '/about/contact' }
+      ]
     }
   ];
 
@@ -114,8 +118,7 @@ const Navbar = () => {
   return (
     <>
       <div className="fixed w-full z-50 flex flex-col">
-        <nav className={`w-full transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
-        }`}>
+        <nav className="w-full bg-white shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Hamburger button (visible on all screens) */}
